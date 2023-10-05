@@ -1,8 +1,7 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
-from django.http.response import JsonResponse
+from .forms import * 
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -67,9 +66,55 @@ def login(request):
 
 
 def dashbaord(request):
+    
     return render(request,'dashboard.html')
 
 
 
 def instructor_course(request):
-    return render(request,'instructor-course.html')
+    courses = Coursess.objects.filter(added_by__username = request.user.username)
+    context = {
+        'courses':courses
+    }
+    return render(request,'instructor-course.html',context)
+
+
+
+def create_course(request):
+    form = AddCourse()
+    if request.method == 'POST':
+        form = AddCourse(request.POST,request.FILES)
+        if form.is_valid():
+            data = form.save(commit=False)
+            added_by = User.objects.get(username=request.user.username)
+            data.added_by = added_by
+            data.save()
+            messages.success(request,'Added..')
+            return redirect('lms_app:instructor_course')
+    else:
+        form = AddCourse()
+    context ={
+        'form':form
+    }  
+    return render(request,'create-course.html',context)
+
+
+def edit_course(request,update_id):
+    update = Coursess.objects.filter(id=update_id).first()
+    if request.method == 'POST':
+        form = AddCourse(request.POST,request.FILES,instance=update)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Updated..')
+            return redirect('lms_app:instructor_course')
+    else:
+        form = AddCourse(instance=update)
+    return render(request,'edit-course.html',{'form':form})
+
+
+
+def delete_course(request,delete_id):
+    dlt = Coursess.objects.get(id=delete_id)
+    dlt.delete()
+    messages.success(request,'Deleted...')
+    return redirect('lms_app:instructor_course')

@@ -255,9 +255,11 @@
                             <div class="headerarea__main__menu">
                                 <nav>
                                     <ul>
+                                        {% if user.is_superuser %}
                                         <li class="mega__menu position-static">
                                             <a class="headerarea__has__dropdown" href="{% url 'lms_app:dashbaord' %}">Dashboard </a>
                                         </li>
+                                        {% endif %}
 
                                         <li class="mega__menu position-static">
                                             <a class="headerarea__has__dropdown" href="{% url 'lms_app:index' %}">Home </a>

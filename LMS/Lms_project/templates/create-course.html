@@ -3,16 +3,16 @@
 <html class="no-js" lang="zxx">
 
 
-<!-- Mirrored from html.themewin.com/edurock-preview/edurock/dashboard/instructor-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Oct 2023 09:59:00 GMT -->
+<!-- Mirrored from html.themewin.com/edurock-preview/edurock/dashboard/create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Oct 2023 09:58:47 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Instructor Dashboard | Edurock - Education LMS Template</title>
+    <title>Product-Details | Edurock - Education LMS Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
-    <!-- Place favicon.ico in the root directory -->
+    <!-- Place favicon.ico' %} in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -23,7 +23,12 @@
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+<style>
+    .float-right
+    {
+        float:right;
+    }
+</style>
 
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -1107,213 +1112,244 @@
             <div class="theme__shadow__circle shadow__right"></div>
         </div>
         <!-- theme fixed shadow -->
+        <!-- breadcrumbarea__section__start -->
 
+        <div class="breadcrumbarea">
 
-        <!-- dashboardarea__area__start  -->
-        <div class="dashboardarea sp_bottom_100">
-            <div class="container-fluid full__width__padding">
+            <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="dashboardarea__wraper">
-                            <div class="dashboardarea__img">
-                                <div class="dashboardarea__inner">
-                                    <div class="dashboardarea__left">
-                                        <div class="dashboardarea__left__img">
-                                            <img src="{% static 'img/dashbord/dashbord__2.jpg' %}" alt="">
-                                        </div>
-                                        <div class="dashboardarea__left__content">
-                                            <h5>Hello</h5>
-                                            <h4>{{user.first_name}} {{user.last_name}}</h4>
-                                        </div>
-                                    </div>
-                                    <div class="dashboardarea__star">
-                                        <i class="icofont-star"></i>
-                                        <i class="icofont-star"></i>
-                                        <i class="icofont-star"></i>
-                                        <i class="icofont-star"></i>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                            <span>4.0 (120 Reviews)</span>
-                                    </div>
-                                    <div class="dashboardarea__right">
-                                        <div class="dashboardarea__right__button">
-                                            <a class="default__button" href="{% url 'lms_app:create_course' %}">Create a New Course
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                                        </div>
-                                    </div>
-
-                                </div>
+                        <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                            <div class="breadcrumb__title">
+                                <h2 class="heading">Create Course</h2>
+                            </div>
+                            <div class="breadcrumb__inner">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Create Course</li>
+                                </ul>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
-            <div class="dashboard">
-                <div class="container-fluid full__width__padding">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-3 col-md-12">
-                            <div class="dashboard__inner sticky-top">
-                                <div class="dashboard__nav__title">
-                                    <h6>Welcome, {{user.first_name}} {{user.last_name}}</h6>
-                                </div>
-                                <div class="dashboard__nav">
-                                    <ul>
-                                        <li>
-                                            <a class="active" href="{% url 'lms_app:dashbaord' %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                                Dashboard</a>
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-
-                                <div class="dashboard__nav__title mt-40">
-                                    <h6>Instructor</h6>
-                                </div>
-                                <div class="dashboard__nav">
-                                    <ul>
-                                        <li>
-                                            <a href="{% url 'lms_app:instructor_course' %}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                                                My Course</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="dashboard__nav__title mt-40">
-                                    <h6>user</h6>
-                                </div>
-
-                                <div class="dashboard__nav">
-                                    <ul>
-                                        
-                                        <li>
-                                            <a href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume-1"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                                                Logout</a>
-                                        </li>
-                                  
-                                  
-                                 
-                                    </ul>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9 col-md-12">
-                            <div class="dashboard__content__wraper">
-                                <div class="dashboard__section__title">
-                                    <h4>Dashboard</h4>
-                                </div>
-                                <div class="row">
-                                    
-                                    <div class="col-xl-4 col-lg-6 col-md-12 col-12">
-                                        <div class="dashboard__single__counter">
-                                            <div class="counterarea__text__wraper">
-                                                <div class="counter__img">
-                                                    <img src="{% static 'img/counter/counter__4.png' %}" alt="counter">
-                                                </div>
-                                                <div class="counter__content__wraper">
-                                                    <div class="counter__number">
-                                                        <span class="counter">14</span>+
-                    
-                                                    </div>
-                                                    <p>Total Courses</p>
-                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                   
-                                </div>
-                            </div>
-                            <div class="dashboard__content__wraper">
-                                <div class="dashboard__section__title">
-                                    <h4>Dashboard</h4>
-                                    <a href="../course.html">See More...</a>
-                                </div>
-                                <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="dashboard__table table-responsive">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Course Name</th>
-                                                    <th>Enrolled</th>
-                                                    <th>Rating</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th><a href="#">Javascript</a></th>
-                                                    <td>1100</td>
-                                                    <td>
-                                                        <div class="dashboard__table__star">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="dashboard__table__row">
-                                                    <th><a href="#">PHP</a></th>
-                                                    <td>700</td>
-                                                    <td>
-                                                        <div class="dashboard__table__star">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th><a href="#">HTML</a></th>
-                                                    <td>1350</td>
-                                                    <td>
-                                                        <div class="dashboard__table__star">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="dashboard__table__row">
-                                                    <th><a href="#">Graphic</a></th>
-                                                    <td>1266</td>
-                                                    <td>
-                                                        <div class="dashboard__table__star">
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                            <i class="icofont-star"></i>
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-
-                      
-                    </div>
-                </div>
+            <div class="shape__icon__2">
+                <img class=" shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}" alt="photo">
+                <img class=" shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %}" alt="photo">
+                <img class=" shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %}" alt="photo">
+                <img class=" shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %}" alt="photo">
             </div>
 
         </div>
-         <!-- dashboardarea__area__end   -->
+        <!-- breadcrumbarea__section__end-->
 
 
+        <!-- become__instructor__start -->
+            <div class="create__course sp_100">
+             <div class="container">
+                <div class="row">
+                <form method="post" enctype = 'multipart/form-data'>
+                    {% csrf_token %}
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+                        <div class="create__course__accordion__wraper">
+                        <div class="accordion" id="accordionExample">
+
+
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Course Info
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="become__instructor__form">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <label for="#">Course Title</label>
+                                                        {{form.title}}
+                                                        {% comment %} <input type="text" name='course_title' placeholder="Course Title"> {% endcomment %}
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <label for="#">Price ($)</label>
+                                                        {{form.price}}
+                                                        {% comment %} <input type="number" name="price" placeholder="Free Regular Price ($)"> {% endcomment %}
+                                                    </div>
+                                                    <small class="create__course__small">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> The Course Price Includes Your Author Fee.</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <label for="#">Discounted Price ($)</label>
+                                                        {{form.discount_price}}
+                                                        {% comment %} <input type="number" name="number" placeholder="Discounted Price ($)"> {% endcomment %}
+                                                        <small class="create__course__small">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> The Course Price Includes Your Author Fee.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                                    <div class="dashboard__select__heading">
+                                                        <span>Courses</span>
+                                                    </div>
+                                                    {{form.course_categories}}
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                                    <div class="dashboard__select__heading">
+                                                        <span>Images</span>
+                                                    </div>
+                                                    {{form.img}}
+                                                </div>
+                                            
+                                               
+                                            </div>
+
+                                       
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <label for="#">About Course</label>
+                                                        {{form.about_course}}
+                                                        {% comment %} <textarea name="desc" id="" cols="30"
+                                                            rows="10"></textarea> {% endcomment %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% comment %} <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                                                <div class="dashboard__form__button create__course__margin">
+                                                    <a class="default__button" href="#">Update Info</a>
+                                                </div>
+                                            </div> {% endcomment %}
+
+
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Course Intro Video
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="become__instructor__form">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <input type="text" placeholder="Select Video search">
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="col-xl-12">
+                                                <div class="dashboard__form__wraper">
+                                                    <div class="dashboard__form__input">
+                                                        <label for="#">Add Your Video URL</label>
+                                                        <input type="text" placeholder="Add your Video URL here">
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <small>Example: <a href="https://www.youtube.com/watch?v=yourvideoid">https://www.youtube.com/watch?v=yourvideoid</a></small>
+
+
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                        
+                        </div>
+                        <div class="row">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+                        <div class="create__course__bottom__button float-right">
+                        <input type='submit' class='btn btn-primary' value='Create Course'>
+                        {% comment %} <a href="#">Create Course</a> {% endcomment %}
+                    </div>
+                    </div>
+                </form>
+
+
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+                        <div class="create__course__wraper">
+                            <div class="create__course__title">
+                                <h4>Course Upload Tips</h4>
+                            </div>
+                            <div class="create__course__list">
+                                <ul>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Set the Course Price option make it free.
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Standard size for the course thumbnail.
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Video section controls the course overview video.
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Course Builder is where you create  course.
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Add Topics in the Course Builder section to create lessons, .
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Prerequisites refers to the fundamental courses .
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Information from the Additional Data section.
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            </div>
+
+        
+    
+     <!-- become__instructor__end -->
         <!-- footer__section__start -->
         <div class="footerarea">
             <div class="container">
@@ -1508,9 +1544,8 @@
     <script src="{% static 'js/waypoints.min.js' %}"></script>
     <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
-    <script src="../../../../cdn.js' %}delivr.net/npm/swiper%409/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
@@ -1525,5 +1560,5 @@
 </body>
 
 
-<!-- Mirrored from html.themewin.com/edurock-preview/edurock/dashboard/instructor-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Oct 2023 09:59:00 GMT -->
+<!-- Mirrored from html.themewin.com/edurock-preview/edurock/dashboard/create-course.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Oct 2023 09:58:56 GMT -->
 </html>

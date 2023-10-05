@@ -11,6 +11,11 @@ urlpatterns = [
 
     path('dashbaord',views.dashbaord,name='dashbaord'),
     path('instructor-course',views.instructor_course,name='instructor_course'),
+    path('create-course',views.create_course,name='create_course'),
+    path('edit-course/<int:update_id>/',views.edit_course,name='edit_course'),
+    path('delete-course/<int:delete_id>/',views.delete_course,name='delete_course'),
+
+    
     
     
     
