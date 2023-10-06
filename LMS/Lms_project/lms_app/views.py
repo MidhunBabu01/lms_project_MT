@@ -118,3 +118,34 @@ def delete_course(request,delete_id):
     dlt.delete()
     messages.success(request,'Deleted...')
     return redirect('lms_app:instructor_course')
+
+
+
+def all_courses(request):
+    all_courses = Coursess.objects.all()
+    context = {
+        'all_courses':all_courses
+    }
+    return render(request,'course.html',context)
+
+
+
+import razorpay
+
+def course_details(request,course_id):
+    details = Coursess.objects.get(id=course_id)
+    amount = 50000
+    client = razorpay.Client(auth=("rzp_test_nSvSoMklmt00yO", "8QqzAKIgDaKP3hp6L6c8v0Bw"))
+    payment = client.order.create({'amount':amount,'currency':'INR','payment_capture':'1'})
+
+    data = { 
+        "amount": 500,
+        "currency": "INR", 
+        "receipt": "order_rcptid_11"
+    }
+    payment = client.order.create(data=data)
+
+    context = {
+        'details':details
+    }
+    return render(request,'course-details.html',context)
