@@ -17,10 +17,10 @@ def instructors_register(request):
         password2 = request.POST.get('password2')
         if password1 == password2:
             if User.objects.filter(username=username).exists():
-                messages.info(request,"Username already exist")
+                messages.error(request,"Username already exist")
                 return redirect("lms_app:instructors_register")
             elif User.objects.filter(email=email).exists():
-                messages.info(request,"Email  already registered")
+                messages.error(request,"Email  already registered")
                 return redirect("lms_app:instructors_register")
             else:
                 user = User.objects.create_user(
@@ -44,6 +44,38 @@ def instructors_register(request):
     return render(request,'register.html')
 
 
+def register(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.error(request,"username already exist")
+                return redirect("lms_app:register")
+            elif User.objects.filter(email=email).exists():
+                messages.error(request,"email already registered")
+                return redirect("lms_app:register")
+            else:
+                user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, email=email,
+                                        password=password1)
+                user.save();
+                if 'username' in request.session:
+                    request.session.flush();
+                return redirect('lms_app:login')
+        else:
+            messages.error(request,"Password not match")
+            return redirect("lms_app:register")
+    else:
+        return render(request, "register.html")
+
+
+
+
+
 def login(request):
      if 'username' in request.session:
         return redirect('lms_app:index')
@@ -63,19 +95,27 @@ def login(request):
         return render(request,'login.html')
      
 
+def logout(request):
+    if 'username' in request.session:
+        request.session.flush();
+    return redirect('lms_app:index')
+
 
 
 def dashbaord(request):
-    
-    return render(request,'dashboard.html')
+    course_count = Coursess.objects.filter(added_by__username = request.user.username).count()
+    return render(request,'dashboard.html',{'course_count':course_count})
 
 
 
 def instructor_course(request):
-    courses = Coursess.objects.filter(added_by__username = request.user.username)
-    context = {
-        'courses':courses
-    }
+    if 'username' in request.session:
+        courses = Coursess.objects.filter(added_by__username = request.user.username)
+        context = {
+            'courses':courses
+        }
+    else:
+        return redirect('lms_app:login')
     return render(request,'instructor-course.html',context)
 
 
@@ -122,10 +162,13 @@ def delete_course(request,delete_id):
 
 
 def all_courses(request):
-    all_courses = Coursess.objects.all()
-    context = {
-        'all_courses':all_courses
-    }
+    if 'username' in request.session:
+        all_courses = Coursess.objects.all()
+        context = {
+            'all_courses':all_courses
+        }
+    else:
+        return redirect('lms_app:login')
     return render(request,'course.html',context)
 
 

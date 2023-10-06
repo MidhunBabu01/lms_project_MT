@@ -7,8 +7,10 @@ app_name = 'lms_app'
 urlpatterns = [
     path('',views.index,name='index'),
     path('instructors-register',views.instructors_register,name='instructors_register'),
+    path('student-register',views.register,name='register'),
     path('login',views.login,name='login'),
-
+    path('logout',views.logout,name='logout'),
+    
     path('dashbaord',views.dashbaord,name='dashbaord'),
     path('instructor-course',views.instructor_course,name='instructor_course'),
     path('create-course',views.create_course,name='create_course'),
@@ -17,9 +19,5 @@ urlpatterns = [
     path('all-courses',views.all_courses,name='all_courses'),
     path('course-details/<int:course_id>/',views.course_details,name='course_details'),
 
-    
-    
-    
-    
     
 ]

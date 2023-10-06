@@ -233,9 +233,18 @@
                                     </div>
                                 </div>
 
+                               {% if user.is_authenticated %}
                                 <div class="headerarea__login">
-                                    <a href="login.html"><i class="icofont-user-alt-5"></i></a>
+                                    <a href="{% url 'lms_app:logout' %}">Logout</a>
                                 </div>
+                                {% else %}
+                                <div class="headerarea__login">
+                                    <a href="{% url 'lms_app:login' %}">Login</a>
+                                </div>
+                                <div class="headerarea__login">
+                                    <a href="{% url 'lms_app:register' %}">Register</a>
+                                </div>
+                                {% endif %}
                       
                             </div>
                         </div>
